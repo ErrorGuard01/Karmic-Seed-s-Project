@@ -42,7 +42,7 @@
 
 **[SCREEN ACTION]**: Click **"Warehouse Handheld Kiosk"** in top navbar.
 The screen switches to high-contrast dark mode with large cards.
-Point to worker station pills (*Station 1 - Dave*).
+Point to worker station pills (*Station 1*).
 Click **"PICK & PACK"** on order `#XYZ-9402` (Priority Rush).
 
 **[VOICEOVER SCRIPT]**:
@@ -54,13 +54,13 @@ Click **"PICK & PACK"** on order `#XYZ-9402` (Priority Rush).
 >
 > We solved this using a **Poka-Yoke mistake-proofing design**: we display high-res product photos, exact coordinates—like `Aisle 2, Shelf A-01`—and high-visibility variant warning banners."
 
-**[SCREEN ACTION]**: Click **"Test Wrong Scan"**. 
+**[SCREEN ACTION]**: Click **"Simulate Error"**. 
 Watch the card flash red with an immediate alert: *"WRONG ITEM/VARIANT! Expected 890123450002"*.
 
 **[VOICEOVER SCRIPT]**:
 > "Watch: if a picker grabs the wrong variant, scanning the barcode instantly triggers an error and blocks the packaging step. It is physically impossible to pack the wrong item."
 
-**[SCREEN ACTION]**: Click **"Scan Match"** for both items. Confetti fires!
+**[SCREEN ACTION]**: Click **"Scan Barcode"** for both items. Confetti fires!
 Select box size (*Medium Box B2*), highlight designated staging bay (*Bay A - DHL Express*), and click **"Place in Bay A & Complete Pack"**.
 
 **[VOICEOVER SCRIPT]**:
@@ -89,20 +89,20 @@ Open an unassigned order (`#XYZ-9401`) and click **"Create Label"**.
 
 ### [3:00 - 3:55] Section 4: Dual-Warehouse Topology & Exception Triage
 
-**[SCREEN ACTION]**: Click **"Dual Warehouse Stock & Transfers"** tab.
+**[SCREEN ACTION]**: Click **"Inventory"** tab.
 Highlight `Heavy Aluminum Laptop Riser` showing `0 in Main Warehouse, 40 in Secondary Annex`.
-Click **"Receive into Main Shelf"** on transfer `#TR-1082`.
-Then switch to **"Exception Resolution Desk"** and resolve ticket `#EXC-101`.
-Finally switch to **"Courier Staging & Dispatch"** and open the **Driver Pickup Manifest**.
+Click **"Receive Stock"** on transfer `#TR-1082`.
+Then switch to **"Exceptions"** tab and resolve ticket `#EXC-101`.
+Finally switch to **"Staging & Dispatch"** and open the **Driver Pickup Manifest**.
 
 **[VOICEOVER SCRIPT]**:
 > "Next, let's examine supply chain topology. XYZ's biggest deadlock was inventory: customer orders only ship from the Main Warehouse, but bulk stock is kept in the Secondary Annex. 
 >
 > Under the spreadsheet model, an item showed 40 units in aggregate, but the picking shelf was empty, stalling the order.
 >
-> Here, stock across both facilities is tracked separately. When shelf stock falls below reorder point, an inter-warehouse transfer is requested. When the van arrives, clicking 'Receive into Main Shelf' replenishes inventory and unblocks waiting orders.
+> Here, stock across both facilities is tracked separately. When shelf stock falls below reorder point, an inter-warehouse transfer is requested. When the van arrives, clicking 'Receive Stock' replenishes inventory and unblocks waiting orders.
 >
-> In our Exception Desk, every issue reported on the floor is logged and audited—no more forgotten sticky notes. 
+> In our Exceptions Desk, every issue reported on the floor is logged and audited—no more forgotten sticky notes. 
 > 
 > And at the courier dock, we generate an official **Driver Handover Manifest** for driver sign-off, completely eliminating missed pickups."
 
@@ -110,8 +110,8 @@ Finally switch to **"Courier Staging & Dispatch"** and open the **Driver Pickup 
 
 ### [3:55 - 4:45] Section 5: Operations Analytics & Business Impact
 
-**[SCREEN ACTION]**: Click the **"Operations Analytics & KPIs"** tab!
-Walk through the KPI cards, the Fulfillment Funnel, the Labor Capacity meter, and the Root-Cause Pareto analysis.
+**[SCREEN ACTION]**: Click the **"Analytics"** tab!
+Walk through the KPI cards, the Cycle Time Funnel, the Labor Capacity meter, and the Carrier Distribution.
 
 **[VOICEOVER SCRIPT]**:
 > "Finally, let's look at the **Operations Analytics & KPI Center**, built specifically for an operations analyst.
