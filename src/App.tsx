@@ -41,56 +41,56 @@ export function App() {
   const handleVerifyItem = (orderId: string, itemId: string, scannedBarcode: string) => {
     const result = store.verifyOrderItem(orderId, itemId, scannedBarcode);
     if (!result.success) {
-      showToast(`⚠️ Scan Warning: ${result.message}`);
+      showToast(`Scan Warning: ${result.message}`);
     }
     return result;
   };
 
   const handleCompletePacking = (orderId: string, stagingBay: string) => {
     store.completePacking(orderId, stagingBay);
-    showToast(`✅ Order packaged and placed in ${stagingBay}!`);
+    showToast(`Order packed and staged in ${stagingBay}`);
   };
 
   const handleSubmitIssue = (orderId: string, type: any, description: string, reportedBy: string) => {
     store.reportOrderIssue(orderId, type, description, reportedBy);
-    showToast(`🚨 Warehouse issue logged & sent to office triage.`);
+    showToast(`Issue logged`);
   };
 
   // Office handlers
   const handleGenerateLabel = (orderId: string, courierId: string) => {
     store.generateShippingLabel(orderId, courierId);
     setLabelModalOrder(null);
-    showToast(`🏷️ Label created! Order sent to Warehouse Pick Queue.`);
+    showToast(`Shipping label generated`);
   };
 
   const handleReceiveTransfer = (transferId: string) => {
     store.receiveTransfer(transferId);
-    showToast(`📦 Stock transfer received into Main Warehouse shelves!`);
+    showToast(`Stock transfer received`);
   };
 
   const handleRequestTransfer = (productId: string, quantity: number, notes?: string) => {
     store.requestStockTransfer(productId, quantity, notes);
-    showToast(`🚚 Transfer requested from Secondary Warehouse!`);
+    showToast(`Transfer requested`);
   };
 
   const handleDispatchCourier = (courierId: string) => {
     const count = store.dispatchCourierParcels(courierId);
-    showToast(`🚚 Handover confirmed! ${count} parcels dispatched.`);
+    showToast(`Dispatched ${count} parcels`);
   };
 
   const handleResolveException = (ticketId: string, resolution: string) => {
     store.resolveException(ticketId, resolution);
-    showToast(`✅ Exception resolved & order unblocked.`);
+    showToast(`Exception resolved`);
   };
 
   const handleSimulateUrgentOrder = () => {
     store.simulateUrgentRushOrder();
-    showToast(`⚡ New Rush Same-Day Order added with imminent cutoff!`);
+    showToast(`Priority order added`);
   };
 
   const handleResetData = () => {
     store.resetToInitial();
-    showToast(`🔄 Demo dataset reset to initial state.`);
+    showToast(`Data reset`);
   };
 
   return (
@@ -102,7 +102,7 @@ export function App() {
         </div>
       )}
 
-      {/* Top Navbar with Persona Switcher & Hiring Demo Tools */}
+      {/* Top Navbar */}
       <Navbar
         currentRole={currentRole}
         onRoleChange={setCurrentRole}
@@ -133,7 +133,7 @@ export function App() {
                 }`}
               >
                 <Layers className="w-4 h-4" />
-                <span>Orders & Fulfillment Pipeline</span>
+                <span>Orders</span>
                 <span className="font-mono text-[10px] px-2 py-0.5 rounded-full bg-white/20">
                   {counts.total}
                 </span>
@@ -149,7 +149,7 @@ export function App() {
                 }`}
               >
                 <Boxes className="w-4 h-4" />
-                <span>Dual Warehouse Stock & Transfers</span>
+                <span>Inventory</span>
                 {transfers.filter((t) => t.status !== 'RECEIVED').length > 0 && (
                   <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-bold">
                     {transfers.filter((t) => t.status !== 'RECEIVED').length} in transit
@@ -167,7 +167,7 @@ export function App() {
                 }`}
               >
                 <Truck className="w-4 h-4" />
-                <span>Courier Staging & Dispatch</span>
+                <span>Staging & Dispatch</span>
                 {counts.staged > 0 && (
                   <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500 text-white font-bold">
                     {counts.staged} staged
@@ -185,7 +185,7 @@ export function App() {
                 }`}
               >
                 <AlertTriangle className="w-4 h-4" />
-                <span>Exception Resolution Desk</span>
+                <span>Exceptions</span>
                 {counts.blocked > 0 && (
                   <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-full bg-rose-500 text-white font-bold">
                     {counts.blocked} blocked
@@ -203,10 +203,7 @@ export function App() {
                 }`}
               >
                 <BarChart3 className="w-4 h-4" />
-                <span>Operations Analytics & KPIs</span>
-                <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-bold">
-                  Ops View
-                </span>
+                <span>Analytics</span>
               </button>
             </div>
 

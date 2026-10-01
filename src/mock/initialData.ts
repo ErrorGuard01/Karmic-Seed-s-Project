@@ -76,7 +76,7 @@ export const INITIAL_INVENTORY: InventoryItem[] = [
     locationSecondary: 'Annex Shelf S-12',
     imageUrl: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&auto=format&fit=crop&q=80',
     pendingTransferQuantity: 15,
-    variantsList: ['Midnight Blue (Distinct from Navy!)', 'Matte Black', 'Brushed Steel'],
+    variantsList: ['Midnight Blue', 'Matte Black', 'Brushed Steel'],
   },
   {
     productId: 'PROD-003',
@@ -225,7 +225,7 @@ export const INITIAL_ORDERS: Order[] = [
         verified: false,
         shelfLocation: 'Aisle 1, Shelf B-02',
         imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&auto=format&fit=crop&q=80',
-        warningNotes: 'IMPORTANT: Check switch label carefully! Do NOT pick Red switches.'
+        warningNotes: 'Variant: Brown Tactile'
       }
     ]
   },
@@ -263,7 +263,7 @@ export const INITIAL_ORDERS: Order[] = [
         verified: false,
         shelfLocation: 'Aisle 2, Shelf A-01',
         imageUrl: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&auto=format&fit=crop&q=80',
-        warningNotes: 'CAUTION: Midnight Blue box has blue circle sticker; Black has grey.'
+        warningNotes: 'Variant: Midnight Blue'
       },
       {
         id: 'ITEM-3',
@@ -300,7 +300,7 @@ export const INITIAL_ORDERS: Order[] = [
     courierId: 'fedex-ground',
     trackingNumber: 'FDX-GRN-991203',
     labelGenerated: true,
-    pickerId: 'Elena (Station 1)',
+    pickerId: 'Station 1',
     totalAmount: 110.0,
     items: [
       {
@@ -315,7 +315,7 @@ export const INITIAL_ORDERS: Order[] = [
         verified: true,
         shelfLocation: 'Aisle 3, Shelf C-04',
         imageUrl: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300&auto=format&fit=crop&q=80',
-        warningNotes: 'Verify size tag is Large (L). Do not confuse with M.'
+        warningNotes: 'Size: L'
       }
     ]
   },
@@ -339,7 +339,7 @@ export const INITIAL_ORDERS: Order[] = [
     courierId: 'dhl-express',
     trackingNumber: 'DHL-EXP-440182',
     labelGenerated: true,
-    pickerId: 'Dave (Station 2)',
+    pickerId: 'Station 2',
     stagingBay: 'Bay A (Express)',
     totalAmount: 289.0,
     items: [
@@ -608,20 +608,20 @@ export const INITIAL_EXCEPTIONS: ExceptionTicket[] = [
     orderId: 'ORD-9407',
     type: 'MISSING_STOCK',
     status: 'OPEN',
-    reportedBy: 'Dave (Warehouse Picker)',
+    reportedBy: 'Station 1',
     reportedAt: '2026-09-30T10:25:00.000Z',
-    description: 'Aisle 2, Shelf D-03 is completely empty. Spreadsheet said 2 units in Main Warehouse, but none found. Order blocked until transfer arrives.',
-    resolution: 'Stock Transfer TR-1082 in transit from Secondary Warehouse (ETA 13:00).'
+    description: 'Shelf D-03 is empty. Transfer requested from Secondary Annex.',
+    resolution: 'Transfer TR-1082 in transit.'
   },
   {
     id: 'EXC-102',
     orderId: 'ORD-9390',
     type: 'WRONG_VARIANT_ALERT',
     status: 'RESOLVED',
-    reportedBy: 'Elena (Warehouse Packer)',
+    reportedBy: 'Station 2',
     reportedAt: '2026-09-30T09:05:00.000Z',
-    description: 'Bin had Red switch keyboards mixed into the Brown switch bin. Barcode scanner rejected it.',
-    resolution: 'Picker swapped for correct Brown switch unit. Bin sorted and restocked.',
+    description: 'Switch type mismatch identified during verification.',
+    resolution: 'Unit replaced with verified SKU.',
     resolvedAt: '2026-09-30T09:18:00.000Z'
   }
 ];

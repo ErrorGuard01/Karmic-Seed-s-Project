@@ -294,10 +294,10 @@ class FulfillmentStore {
       id: `ORD-${num}`,
       orderNumber: `XYZ-${num}`,
       channel: 'Shopify',
-      customerName: 'Claire Redfield',
+      customerName: 'Morgan Miller',
       shippingAddress: {
-        name: 'Claire Redfield',
-        street: '100 Raccoon Way, Apt 3',
+        name: 'Morgan Miller',
+        street: '400 Hennepin Ave, Suite 3',
         city: 'Minneapolis',
         state: 'MN',
         zip: '55401',
@@ -324,7 +324,7 @@ class FulfillmentStore {
           verified: false,
           shelfLocation: 'Aisle 1, Shelf B-05',
           imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=300&auto=format&fit=crop&q=80',
-          warningNotes: 'URGENT SAME-DAY SHIPMENT: Handover to City Courier before 13:30.'
+          warningNotes: 'Same-day: Handover by 13:30'
         }
       ]
     };

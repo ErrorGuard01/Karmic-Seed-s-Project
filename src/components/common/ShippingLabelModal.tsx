@@ -40,7 +40,7 @@ export const ShippingLabelModal: React.FC<ShippingLabelModalProps> = ({
             </div>
             <div>
               <h3 className="font-bold text-slate-800 text-lg">
-                Shipping Label & Courier Dispatch
+                Shipping Label
               </h3>
               <p className="text-xs text-slate-500 font-mono">
                 Order #{order.orderNumber} &bull; {order.customerName}
@@ -56,10 +56,10 @@ export const ShippingLabelModal: React.FC<ShippingLabelModalProps> = ({
         </div>
 
         <div className="p-6 space-y-6">
-          {/* Courier Selection & Comparison */}
+          {/* Courier Selection */}
           <div className="no-print">
             <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
-              Select Courier (Speed vs Cost vs Pickup Time)
+              Select Courier
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {couriers.map((courier) => {
@@ -210,7 +210,7 @@ export const ShippingLabelModal: React.FC<ShippingLabelModalProps> = ({
                 onClick={handleConfirmAndGenerate}
                 className="flex items-center gap-2 px-5 py-2 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-sm hover:shadow transition-all"
               >
-                <Check className="w-4 h-4" /> Generate Label & Dispatch to Warehouse
+                <Check className="w-4 h-4" /> Generate Label
               </button>
             )}
           </div>

@@ -76,10 +76,10 @@ export const ExceptionTab: React.FC<ExceptionTabProps> = ({
           </div>
           <div>
             <h3 className="font-black text-rose-950 text-lg">
-              Exception & Missing Stock Resolution Desk
+              Exceptions Desk
             </h3>
-            <p className="text-xs text-rose-800 max-w-xl">
-              Eliminates forgotten problems. Every warehouse-reported issue is tracked here until resolved by the office team.
+            <p className="text-xs text-rose-800">
+              Active order issues and resolutions
             </p>
           </div>
         </div>
@@ -87,11 +87,11 @@ export const ExceptionTab: React.FC<ExceptionTabProps> = ({
         <div className="flex items-center gap-3">
           <div className="bg-white px-4 py-2 rounded-2xl border border-rose-200 text-center">
             <span className="text-xl font-black text-rose-700">{openTickets.length}</span>
-            <span className="text-[10px] text-rose-900 block font-bold">Unresolved</span>
+            <span className="text-[10px] text-rose-900 block font-bold">Open</span>
           </div>
           <div className="bg-white px-4 py-2 rounded-2xl border border-slate-200 text-center">
             <span className="text-xl font-black text-emerald-700">{resolvedTickets.length}</span>
-            <span className="text-[10px] text-slate-600 block font-bold">Resolved Today</span>
+            <span className="text-[10px] text-slate-600 block font-bold">Resolved</span>
           </div>
         </div>
       </div>
@@ -100,15 +100,15 @@ export const ExceptionTab: React.FC<ExceptionTabProps> = ({
       <div className="space-y-4">
         <h4 className="font-extrabold text-slate-900 text-sm flex items-center gap-2">
           <AlertTriangle className="w-4 h-4 text-rose-600" />
-          <span>Active Unresolved Tickets ({openTickets.length})</span>
+          <span>Open Tickets ({openTickets.length})</span>
         </h4>
 
         {openTickets.length === 0 ? (
           <div className="bg-white rounded-3xl p-10 text-center border-2 border-dashed border-slate-200">
             <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
-            <p className="font-bold text-slate-800 text-sm">All exceptions have been cleared!</p>
+            <p className="font-bold text-slate-800 text-sm">No active exceptions</p>
             <p className="text-xs text-slate-400 mt-0.5">
-              No orders are currently blocked due to missing inventory or variant confusion.
+              All orders are proceeding normally.
             </p>
           </div>
         ) : (
@@ -175,7 +175,7 @@ export const ExceptionTab: React.FC<ExceptionTabProps> = ({
                           onClick={() => handleResolve(ticket.id)}
                           className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-1.5"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5" /> Resolve & Return to Pick Queue
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Resolve & Return to Queue
                         </button>
                       </div>
                     </div>
@@ -218,7 +218,7 @@ export const ExceptionTab: React.FC<ExceptionTabProps> = ({
       {resolvedTickets.length > 0 && (
         <div className="space-y-3 pt-4 border-t border-slate-200">
           <h4 className="font-extrabold text-slate-900 text-xs uppercase tracking-wider text-slate-500">
-            Resolved Issues History Today ({resolvedTickets.length})
+            Resolved Tickets ({resolvedTickets.length})
           </h4>
           <div className="bg-white rounded-3xl border border-slate-200 divide-y divide-slate-100 overflow-hidden text-xs">
             {resolvedTickets.map((t) => (

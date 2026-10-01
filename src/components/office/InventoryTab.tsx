@@ -44,43 +44,38 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Top Banner explaining Multi-Warehouse Topology */}
-      <div className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-3xl p-6 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full bg-blue-500/30 text-blue-200 text-xs font-mono font-bold border border-blue-400/30">
-              DUAL WAREHOUSE TOPOLOGY
-            </span>
-          </div>
-          <h2 className="text-xl font-black">
-            Main Fulfillment Center vs Secondary Bulk Annex
+      {/* Top Banner */}
+      <div className="bg-slate-900 text-white rounded-2xl p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-xl font-bold tracking-tight">
+            Inventory & Replenishment
           </h2>
-          <p className="text-xs text-blue-200 max-w-2xl leading-relaxed">
-            Customer orders only ship from the <strong>Main Warehouse</strong>. When main picking shelves run low or stock is missing, trigger an inter-warehouse transfer from the <strong>Secondary Warehouse</strong> to replenish stock before picking.
+          <p className="text-xs text-slate-400 mt-0.5">
+            Stock levels across Main Warehouse and Secondary Annex
           </p>
         </div>
 
         <button
           type="button"
           onClick={() => setShowTransferModal(true)}
-          className="flex items-center gap-2 px-5 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-2xl text-xs shadow-lg transition-transform active:scale-95 shrink-0"
+          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-xs shadow-xs transition-colors shrink-0"
         >
-          <ArrowRightLeft className="w-4 h-4" /> Request Stock Transfer
+          <ArrowRightLeft className="w-4 h-4" /> Request Transfer
         </button>
       </div>
 
       {/* Active Inter-Warehouse Transfer Tracker */}
       {activeTransfers.length > 0 && (
-        <div className="bg-amber-50 border-2 border-amber-300 rounded-3xl p-5 shadow-xs space-y-3">
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 shadow-xs space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Truck className="w-5 h-5 text-amber-700 animate-bounce" />
-              <h3 className="font-extrabold text-amber-950 text-sm">
-                Active Inter-Warehouse Stock Transfers ({activeTransfers.length})
+              <Truck className="w-4 h-4 text-amber-700" />
+              <h3 className="font-bold text-amber-950 text-sm">
+                Active Transfers ({activeTransfers.length})
               </h3>
             </div>
-            <span className="text-xs font-bold text-amber-800">
-              Transfer Shuttle In-Transit
+            <span className="text-xs font-semibold text-amber-800">
+              In-Transit
             </span>
           </div>
 
@@ -88,11 +83,11 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({
             {activeTransfers.map((tr) => (
               <div
                 key={tr.id}
-                className="bg-white p-4 rounded-2xl border border-amber-200 shadow-2xs flex flex-col justify-between gap-3"
+                className="bg-white p-3.5 rounded-xl border border-amber-200 shadow-2xs flex flex-col justify-between gap-2.5"
               >
                 <div>
                   <div className="flex items-center justify-between mb-1">
-                    <span className="font-mono font-black text-slate-900 text-xs">
+                    <span className="font-mono font-bold text-slate-900 text-xs">
                       #{tr.id} &bull; {tr.quantity} units
                     </span>
                     <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">
@@ -118,10 +113,10 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({
                   <button
                     type="button"
                     onClick={() => onReceiveTransfer(tr.id)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-xs transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs shadow-xs transition-colors"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    Receive into Main Shelf
+                    Receive Stock
                   </button>
                 </div>
               </div>
@@ -131,18 +126,18 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({
       )}
 
       {/* Main Stock Table */}
-      <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
+      <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
         <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
           <div>
             <h3 className="font-bold text-slate-900 text-sm">
-              Live Warehouse Stock Breakdown
+              Stock by Location
             </h3>
             <p className="text-xs text-slate-500">
-              Real-time inventory levels between picking shelves and overflow annex
+              Current inventory levels across facilities
             </p>
           </div>
-          <span className="text-xs font-mono font-bold bg-white px-2.5 py-1 rounded-lg border border-slate-200 text-slate-700">
-            {inventory.length} Product SKUs Tracked
+          <span className="text-xs font-mono font-bold bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-700">
+            {inventory.length} SKUs
           </span>
         </div>
 

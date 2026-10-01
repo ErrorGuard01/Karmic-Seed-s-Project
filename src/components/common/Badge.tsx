@@ -11,35 +11,35 @@ export const StatusBadge: React.FC<{ status: OrderStatus; size?: 'sm' | 'md' | '
     { label: string; bg: string; text: string; border: string; icon: React.ReactNode }
   > = {
     NEW: {
-      label: 'New (Unassigned)',
+      label: 'New',
       bg: 'bg-blue-50',
       text: 'text-blue-700',
       border: 'border-blue-200',
       icon: <Clock className="w-3.5 h-3.5" />,
     },
     READY_TO_PICK: {
-      label: 'Ready to Pick',
+      label: 'Ready',
       bg: 'bg-indigo-50',
       text: 'text-indigo-700',
       border: 'border-indigo-200',
       icon: <Package className="w-3.5 h-3.5" />,
     },
     PICKING: {
-      label: 'In Picking',
+      label: 'Picking',
       bg: 'bg-amber-50',
       text: 'text-amber-800',
       border: 'border-amber-200',
       icon: <Box className="w-3.5 h-3.5 animate-bounce" />,
     },
     PACKING: {
-      label: 'Packing / Scan',
+      label: 'Packing',
       bg: 'bg-purple-50',
       text: 'text-purple-800',
       border: 'border-purple-200',
       icon: <Box className="w-3.5 h-3.5" />,
     },
     STAGED: {
-      label: 'Staged in Bay',
+      label: 'Staged',
       bg: 'bg-emerald-50',
       text: 'text-emerald-800',
       border: 'border-emerald-200',
@@ -53,7 +53,7 @@ export const StatusBadge: React.FC<{ status: OrderStatus; size?: 'sm' | 'md' | '
       icon: <Truck className="w-3.5 h-3.5" />,
     },
     BLOCKED: {
-      label: 'Exception Blocked',
+      label: 'Blocked',
       bg: 'bg-rose-50',
       text: 'text-rose-700',
       border: 'border-rose-200',
@@ -92,7 +92,7 @@ export const PriorityBadge: React.FC<{ priority: boolean; size?: 'sm' | 'md' }> 
       }`}
     >
       <Flame className="w-3.5 h-3.5 fill-current" />
-      SAME-DAY RUSH
+      Priority
     </span>
   );
 };
