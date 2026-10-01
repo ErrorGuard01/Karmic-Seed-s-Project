@@ -56,6 +56,31 @@ A core design insight was that XYZ has **two fundamentally different user groups
 
 ---
 
+## 🌐 Live Cloud Deployment on Render
+
+This repository includes a native **`render.yaml`** configuration for zero-friction 1-click hosting on [Render](https://render.com) (Static Site, free tier, global CDN):
+
+### Option A: Using Render Blueprints (Automatic)
+1. Go to [dashboard.render.com](https://dashboard.render.com/) and click **New +** &rarr; **Blueprint**.
+2. Connect your repository: `https://github.com/ErrorGuard01/Karmic-Seed-s-Project`.
+3. Render will automatically detect `render.yaml` and configure everything. Click **Apply**.
+
+### Option B: Manual Static Site Setup on Render
+1. Go to [dashboard.render.com](https://dashboard.render.com/) &rarr; Click **New +** &rarr; **Static Site**.
+2. Select repository: `ErrorGuard01/Karmic-Seed-s-Project`.
+3. Enter these settings:
+   - **Name**: `xyz-fulfillment-hub`
+   - **Branch**: `main`
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+4. Under **Redirects/Rewrites**, add:
+   - **Type**: `Rewrite`
+   - **Source**: `/*`
+   - **Destination**: `/index.html`
+5. Click **Create Static Site**. Render will build and deploy your live URL in under 60 seconds!
+
+---
+
 ## ⚡ Quickstart Guide (Run Locally in 30 Seconds)
 
 ### Prerequisites
