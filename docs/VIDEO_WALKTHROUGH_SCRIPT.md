@@ -1,166 +1,144 @@
-# 5-Minute Video Walkthrough Script: XYZ Fulfillment Hub
+# 4-Minute Video Walkthrough Script: XYZ Fulfillment Hub
 
+> **Target Duration**: Exactly 4 minutes (~530 words at natural conversational speed)  
 > **Role Context**: Operations Analyst Candidate  
-> **Target Duration**: Under 5 minutes (~4 minutes 30 seconds)  
-> **Key Goal**: Clearly explain how you understood the problem, what you built and how it works, and why you made your design choices.  
-> **Tone**: Simple, natural, conversational spoken English.  
+> **Core Focus**: How you understood the problem, what you built, and why you made those choices.  
+> **Tone**: Simple, friendly, confident spoken English.  
 
 ---
 
-## Quick Timeline & Overview
+## 4-Minute Video Timeline
 
-| Time | Section | Screen Action | What You Explain |
+| Time | Section | Screen Action | Key Points |
 | :--- | :--- | :--- | :--- |
-| **0:00 – 0:45** | **1. The Problem** | Main screen & role switcher | XYZ growing to 250 orders/day, spreadsheet breakdown, office vs warehouse needs. |
-| **0:45 – 2:00** | **2. Warehouse Floor** | Switch to Warehouse view, open order, scan items, stage box | Big touch buttons, barcode check to prevent wrong items, organized staging bays. |
-| **2:00 – 3:00** | **3. Office Operations** | Switch to Office view, check priority timer, create label | Order pipeline, rush countdowns, and choosing the best courier. |
-| **3:00 – 3:45** | **4. Inventory & Exceptions** | Inventory tab, receive transfer, resolve exception | Managing the 2 warehouses, moving stock, and fixing order issues quickly. |
-| **3:45 – 4:30** | **5. Operations Analytics** | Analytics tab | Order cycle time, team workload, and overall operational results. |
-| **4:30 – 4:45** | **6. Wrap-Up** | Back to main screen | Quick wrap-up and closing thank you. |
+| **0:00 – 0:40** | **1. The Problem** | Main screen, toggle overview | XYZ scaling to 250 orders/day; spreadsheets breaking; why we built 2 separate views. |
+| **0:40 – 1:40** | **2. Warehouse Floor** | Click **Warehouse**, pick order, simulate error, scan & stage | Big buttons for non-tech workers; barcode check stops wrong variants; staging bays. |
+| **1:40 – 2:30** | **3. Office Hub** | Click **Office**, check cutoff timer, create label | Real-time visibility, live rush countdowns, smart courier selection. |
+| **2:30 – 3:15** | **4. Inventory & Exceptions** | Click **Inventory** (receive stock), **Exceptions** (resolve issue) | Managing 2 warehouses separately; formal exception desk instead of lost notes. |
+| **3:15 – 3:45** | **5. Analytics** | Click **Analytics**, show KPIs & funnel | Cycle time down from 2h+ to 74 mins; 99.4% accuracy; team workload at 80%. |
+| **3:45 – 4:00** | **6. Wrap-Up** | Return to main screen, thank viewer | Summary of impact and thank you. |
 
 ---
 
 ## Word-for-Word Speaking Script
 
-### [0:00 – 0:45] Section 1: The Problem & Our Approach
+### [0:00 – 0:40] Section 1: The Problem & Our Approach (40s)
 
 **[SCREEN ACTION]**:
-- Have the app open at `http://localhost:5173/`.
-- Hover your mouse over the top navigation bar showing **Office** and **Warehouse**.
+- Start on the main app screen (`http://localhost:5173/`).
+- Hover over the top bar showing **Office** and **Warehouse**.
 
 **[WHAT TO SAY]**:
-> "Hi everyone! Today I’m walking you through the Fulfillment Hub I designed for XYZ.
+> "Hi everyone! Today I’m walking you through the Fulfillment Hub I built for XYZ.
 >
-> When looking at XYZ as an Operations Analyst, the core problem is clear: the company grew to around 200 to 300 orders a day, but it’s still running on spreadsheets and shared folders.
+> As an Operations Analyst, the core problem is clear: XYZ grew to 200 to 300 orders a day, but is still running on spreadsheets.
 >
-> At this volume, spreadsheets start breaking down:
-> - Priority orders get lost in the list and miss courier cutoff times.
-> - Floor workers pick the wrong color or variant because paper pick lists have tiny text.
-> - Stock is split between the Main Warehouse and a second overflow warehouse, so workers waste time looking for items that aren't on the shelf.
-> - And packed boxes get misplaced before courier pickup.
+> At this scale, spreadsheets fail:
+> - Priority orders miss courier cutoffs.
+> - Workers pick the wrong color or variant.
+> - Stock is split between two warehouses, so items look available but aren't on the shelf.
+> - And the warehouse team isn't very comfortable with complex software.
 >
-> On top of that, the warehouse team isn't very comfortable with complicated software.
->
-> That's why I made a key design choice: I split the app into two simple tools. A clean, touch-friendly screen for the warehouse floor, and a clear control hub for the office team. Let's look at the warehouse floor first."
+> That's why I made a key choice: I separated the app into two simple tools. A touch-friendly screen for the warehouse floor, and a control hub for the office. Let’s start in the warehouse."
 
 ---
 
-### [0:45 – 2:00] Section 2: Warehouse Floor (Simple & Mistake-Proof)
+### [0:40 – 1:40] Section 2: Warehouse Floor (Simple & Mistake-Proof) (60s)
 
 **[SCREEN ACTION]**:
-- Click **"Warehouse"** in the top navigation bar.
-- Point to the station buttons (*Station 1, Station 2, Station 3*).
-- Click **"PICK & PACK"** on order `#XYZ-9402` (the orange Rush order).
-- In the pack modal, click **"Simulate Error"** to show the red warning.
-- Then click **"Scan Barcode"** for both items to verify them.
-- Choose a box size, note the staging bay (*Bay A*), and click **"Complete Pack"**.
+- Click **"Warehouse"** in top navbar.
+- Click **"PICK & PACK"** on order `#XYZ-9402` (the top Rush order).
+- In the pack popup, click **"Simulate Error"** (screen flashes red).
+- Click **"Scan Barcode"** for both items.
+- Pick a box size, note **Bay A**, and click **"Complete Pack"**.
 
 **[WHAT TO SAY]**:
-> "Here on the warehouse floor, simplicity is everything.
+> "On the warehouse floor, simplicity is key.
 >
-> We know the floor team isn't tech-savvy, so this screen has large buttons, high contrast, and zero clutter. 
+> We know the team isn't tech-savvy, so this screen has large buttons, high contrast, and zero clutter. 
+> Priority rush orders stay pinned at the top with live countdowns so deadlines are never missed.
 >
-> Notice that rush orders with urgent deadlines stay pinned at the top with a live timer. The worker doesn't have to search or guess what to pick next.
+> Let's click 'Pick & Pack' on this rush order.
 >
-> Let's click 'Pick & Pack' on this priority order.
+> Previously, shipping the wrong variant was a major problem—like sending Midnight Blue instead of Navy.
 >
-> In the old system, shipping the wrong variant was a major headache. For example, Midnight Blue looks almost identical to Navy in dim warehouse lighting.
+> I solved this with product photos, exact shelf locations, and barcode verification.
+> Watch what happens if a picker grabs the wrong item—I'll click 'Simulate Error'.
+> The screen flashes red and blocks them. It is impossible to pack the wrong item.
 >
-> To stop this, I added visual product photos, exact shelf locations, and a barcode scan check.
->
-> Watch what happens if a picker grabs the wrong item and scans it—I'll click 'Simulate Error'.
-> The system immediately flashes red and blocks them. It is impossible to pack the wrong item.
->
-> When the correct items are scanned, the screen confirms the match.
->
-> Once packed, the app tells the worker exactly where to put the box: 'Place in Bay A for DHL Express'.
-> By giving each courier its own physical bay, packed boxes never get lost in random corners again."
+> When the right barcode is scanned, it confirms the match.
+> Once packed, the app tells the worker: 'Place in Bay A for DHL Express'.
+> Dedicated bays mean boxes are never lost in random corners."
 
 ---
 
-### [2:00 – 3:00] Section 3: Office Operations (SLA Tracking & Courier Choice)
+### [1:40 – 2:30] Section 3: Office Operations (Live SLAs & Couriers) (50s)
 
 **[SCREEN ACTION]**:
-- Click **"Office"** in the top navigation bar.
-- Point out the top summary numbers (Queue, Cutoffs, Staged, Exceptions).
-- Switch from **Table** view to **Pipeline** view briefly to show the stages.
-- Click **"Create Label"** on an unassigned order (`#XYZ-9401`).
-- Show the courier options with cost, transit time, and cutoff hours.
+- Click **"Office"** in top navbar.
+- Point to the KPI bar at top (Queue, Cutoffs, Staged, Exceptions).
+- Click **"Create Label"** on unassigned order `#XYZ-9401`.
+- Show the 4 couriers side by side with rates and cutoff times.
 
 **[WHAT TO SAY]**:
-> "Now let's switch to the Office view. The office team has only one or two people, so they need to see everything at a glance without digging through spreadsheet tabs.
+> "Now let's switch to the Office view. With only 1 or 2 people in the office, they need complete visibility without digging through spreadsheets.
 >
-> At the top, they can see the whole queue, priority cutoffs, and staged boxes in real time.
+> The top bar tracks the full queue and approaching courier cutoffs in real time.
 >
-> The countdown timers show exactly how much time is left before courier cutoffs. If an order is close to its deadline, it highlights immediately so it gets handled first.
+> When creating a shipping label, the office can compare couriers side by side: DHL, FedEx, Royal Mail, and City Courier.
 >
-> When the office creates a shipping label, they can compare couriers side by side.
-> Instead of guessing, they can see the cost, delivery speed, and cutoff time for DHL, FedEx, Royal Mail, and City Courier.
->
-> This lets the office pick the most cost-effective courier while still meeting customer delivery promises, saving about a dollar eighty per package."
+> Instead of guessing, they can balance speed, cost, and pickup times. This simple comparison saves XYZ about a dollar eighty per package while meeting customer delivery promises."
 
 ---
 
-### [3:00 – 3:45] Section 4: Dual Warehouses & Handling Exceptions
+### [2:30 – 3:15] Section 4: Dual Warehouses & Exception Desk (45s)
 
 **[SCREEN ACTION]**:
-- Click the **"Inventory"** tab.
-- Point out the stock split between Main Warehouse and Warehouse 2.
+- Click **"Inventory"** tab. Show Main Warehouse vs Warehouse 2 columns.
 - Click **"Receive Stock"** on transfer `#TR-1082`.
-- Click the **"Exceptions"** tab.
-- Click **"Resolve Exception"** and show how the order returns to the queue.
-- Click the **"Staging & Dispatch"** tab and briefly open the **Dispatch Manifest**.
+- Click **"Exceptions"** tab. Click **"Resolve Exception"**.
 
 **[WHAT TO SAY]**:
-> "Next, let's look at one of XYZ's biggest problems: inventory across two warehouses.
+> "Next, let’s look at inventory. XYZ only ships from the Main Warehouse, but keeps extra stock in a second warehouse nearby.
 >
-> Orders only ship from the Main Warehouse, but extra stock sits in Warehouse 2. In the old spreadsheet, numbers were lumped together. So a worker would walk to an empty shelf, not knowing the stock was still in the second building.
+> Spreadsheets combined these numbers, so workers would walk to empty shelves.
 >
-> Here in the Inventory tab, stock in both locations is tracked clearly. When main shelf stock runs low, the office requests a quick transfer. When the van arrives, one click on 'Receive Stock' puts the items back on the shelf.
+> Here in the Inventory tab, both facilities are tracked separately. When shelf stock runs low, the office requests a transfer. Once the van arrives, clicking 'Receive Stock' immediately unblocks orders.
 >
-> If a floor worker ever finds a missing or damaged item, they report it right from their screen. It instantly appears here in the Exceptions Desk so the office can fix it. No more forgotten sticky notes or verbal messages.
->
-> And in Staging & Dispatch, we have a clear handover manifest for the courier driver to sign, making sure no box is left behind."
+> And in our Exceptions Desk, any missing or damaged item reported by floor workers is tracked until resolved. No more forgotten sticky notes."
 
 ---
 
-### [3:45 – 4:30] Section 5: Operations Analytics (Measuring Impact)
+### [3:15 – 3:45] Section 5: Operations Analytics (30s)
 
 **[SCREEN ACTION]**:
-- Click the **"Analytics"** tab.
-- Point to the KPI cards: Cycle Time, Pick Accuracy, Priority SLA, Freight Cost.
-- Show the **Cycle Time Funnel** and the **Labor Utilization** bar.
+- Click **"Analytics"** tab.
+- Point to Cycle Time (74 min), Accuracy (99.4%), and Labor Utilization (80%).
 
 **[WHAT TO SAY]**:
-> "Finally, let's look at the Analytics tab. As an Operations Analyst, measuring process performance is essential.
->
-> Here we track our key operational improvements:
-> - **Average Order Cycle Time** dropped from over two hours down to **74 minutes**—cutting order processing time in half.
-> - **Pick Accuracy** is up to **99.4%**, because barcode verification stops variant mix-ups at the packing table.
-> - **Priority SLA Hit Rate** is at **100%**, thanks to our live countdowns.
-> - And our **Labor Utilization** shows that our 2 to 3 floor workers are working at a steady, sustainable 80% capacity without burning out.
->
-> The cycle time funnel breaks down each step—from order review to shelf picking and staging—so we can spot bottlenecks before they cause delays."
+> "Finally, as an Operations Analyst, we track the metrics:
+> - **Average Order Cycle Time** dropped from over 2 hours down to **74 minutes**—cutting fulfillment time in half.
+> - **Pick Accuracy** reached **99.4%**, virtually eliminating wrong-item returns.
+> - **Priority SLA Hit Rate** is at **100%**.
+> - And our **Labor Utilization** shows the 3 floor workers operating at a healthy, sustainable 80% workload."
 
 ---
 
-### [4:30 – 4:45] Section 6: Conclusion
+### [3:45 – 4:00] Section 6: Wrap-Up (15s)
 
 **[SCREEN ACTION]**:
-- Navigate back to the **Orders** screen.
-- Move cursor smoothly and smile at the camera.
+- Click back to the **Orders** tab.
+- Smile at the camera.
 
 **[WHAT TO SAY]**:
-> "To wrap up: this application directly solves XYZ's core growing pains. 
-> It gives the warehouse team a simple, mistake-proof tool that doesn't overwhelm them, and gives the office full visibility and control over orders, stock, and couriers.
+> "In summary, this Fulfillment Hub replaces spreadsheet chaos with a simple, mistake-proof tool for the warehouse and clear control for the office.
 >
 > Thank you so much for your time and for reviewing my project!"
 
 ---
 
-## Easy Recording Tips
+## Recording Tips for a Crisp 4-Minute Video
 
-1. **Keep your voice relaxed and conversational**: Imagine you are explaining the project to a friendly teammate over Zoom.
-2. **Move your mouse deliberately**: Point to the button or section right before you speak about it.
-3. **Practice once with a timer**: The script has around 650 words. Spoken at a normal, clear pace (around 140–150 words per minute), it takes about 4 minutes and 20 seconds, safely under the 5-minute limit.
-4. **Don't worry about perfection**: If you stumble on a word, just take a breath and keep going naturally.
+1. **Speak naturally**: Speak at a comfortable conversation speed (~130–140 words per minute). Don't rush; the script is intentionally timed with breathing room.
+2. **Move your mouse before you speak**: Move the cursor to each button or card a split-second before you mention it.
+3. **Practice with a timer once**: You'll find this script lands comfortably between 3 minutes 45 seconds and 4 minutes.
